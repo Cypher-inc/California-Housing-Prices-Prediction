@@ -61,9 +61,30 @@ This project involves **Exploratory Data Analysis (EDA)**, **feature encoding**,
    ```bash
    jupyter notebook californiaHousingMain.ipynb
    ```
-
+   
 ---
 
 ## 📌 Conclusion
 
-This notebook serves as a great starting point for supervised regression problems using real-world data. The dataset is clean, the features are interpretable, and the results are a solid benchmark for beginners.
+### Model Performance Summary
+
+| Model            | Dataset | R² Score | RMSE      |
+|------------------|---------|----------|-----------|
+| **Linear**       | Train   | 0.628    | 55,736.59 |
+|                  | Test    | 0.628    | 55,736.59 |
+| **SVR**          | Train   | -0.025   | 93,390.27 |
+|                  | Test    | -0.023   | 92,454.27 |
+| **RBF SVR**      | Train   | -0.025   | 93,390.27 |
+|                  | Test    | -0.023   | 92,454.27 |
+| **Decision Tree**| Train   | 1.000    | 0.00      |
+|                  | Test    | 0.538    | 62,137.55 |
+| **Random Forest**| Train   | 0.969    | 16,183.10 |
+|                  | Test    | 0.793    | 41,635.08 |
+| **XGBoost**      | Train   | 0.855    | 35,158.88 |
+|                  | Test    | 0.798    | 41,051.61 |
+
+
+- 🔹 **XGBoost**  performed the best overall, with high R² scores and relatively low RMSE on both train and test sets.
+- 🔹 **Random Forest and Decision Tree** overfit the training data (R² = 0.96 - 1.0), resulting in weaker generalization.
+- 🔸 **SVR** models underperformed, with negative R² values indicating they failed to capture variance in the data.
+
